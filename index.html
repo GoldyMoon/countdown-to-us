@@ -4,24 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#fff7fb" />
-  <meta name="description" content="一个会自动更新进度的见面倒计时页面。" />
+  <meta name="description" content="一个会自动更新、带照片墙与小互动的见面倒计时页面。" />
   <title>和宝宝见面的倒计时</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
   <main class="wrap">
-    <section class="card" aria-labelledby="page-title">
-      <span class="sparkle s1" aria-hidden="true">♡</span>
-      <span class="sparkle s2" aria-hidden="true">✦</span>
+    <section class="card">
+      <header class="hero">
+        <div>
+          <div class="eyebrow">
+            <img src="./assets/baby-avatar.svg" class="avatar mini-avatar" alt="宝宝头像" />
+            <span>COUNTDOWN TO US</span>
+          </div>
+          <h1>和宝宝见面的倒计时</h1>
+          <p class="subtitle">一段一段熬过去，就到 12 月 17 日啦。</p>
+        </div>
 
-      <header>
-        <h1 id="page-title">和宝宝见面的倒计时 💗</h1>
-        <p class="subtitle">一段一段熬过去，就到 12 月 17 日啦。</p>
+        <aside class="next-meet-card">
+          <span>下一次见面</span>
+          <strong id="nextMeetValue">正在计算…</strong>
+          <small id="nextMeetDate"></small>
+        </aside>
       </header>
 
-      <section class="overview" aria-label="总进度">
-        <div class="progress-shell" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressShell">
+      <section class="overview">
+        <div class="progress-shell" id="progressShell">
           <div class="progress" id="progressBar"></div>
+          <img src="./assets/baby-avatar.svg" class="avatar progress-avatar" id="progressAvatar" alt="当前进度" />
         </div>
         <div class="progress-label">
           <span id="progressText">正在计算今天的进度…</span>
@@ -29,16 +39,64 @@
         </div>
       </section>
 
-      <section class="timeline" id="timeline" aria-label="时间安排"></section>
+      <section class="memory-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">OUR LITTLE MOMENTS</span>
+            <h2>滚动照片墙</h2>
+          </div>
+          <div class="wall-controls">
+            <button type="button" id="wallPrev" aria-label="向左滚动">←</button>
+            <button type="button" id="wallToggle">暂停</button>
+            <button type="button" id="wallNext" aria-label="向右滚动">→</button>
+          </div>
+        </div>
 
-      <section class="finale" id="finale">
-        <strong>🎉 12 月 17 日 · 学期结束</strong>
-        <span>然后就可以和宝宝好好玩啦！</span>
+        <div class="photo-viewport" id="photoViewport" tabindex="0">
+          <div class="photo-track" id="photoTrack"></div>
+        </div>
+        <p class="photo-tip">点照片可以放大 · 手机上可以左右滑</p>
       </section>
 
-      <footer class="footer">每过一天，都离下一次见面更近一点 ♡</footer>
+      <section class="timeline-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">OUR PLAN</span>
+            <h2>接下来的小日程</h2>
+          </div>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="miss-card">
+        <div class="miss-copy">
+          <img src="./assets/baby-avatar.svg" class="avatar miss-avatar" alt="宝宝头像" />
+          <div>
+            <strong>今天也有想宝宝</strong>
+            <span>点一下，送一颗小心心到页面上。</span>
+          </div>
+        </div>
+        <button type="button" id="loveButton">想宝宝了 <span id="loveCount">♡</span></button>
+        <div id="heartStage"></div>
+      </section>
+
+      <section class="finale">
+        <img src="./assets/baby-avatar.svg" class="avatar finale-avatar" alt="宝宝头像" />
+        <div>
+          <strong>12 月 17 日 · 学期结束</strong>
+          <span>然后就可以和宝宝好好玩啦！</span>
+        </div>
+      </section>
+
+      <footer>每过一天，都离下一次见面更近一点 ♡</footer>
     </section>
   </main>
+
+  <dialog id="lightbox">
+    <button type="button" id="lightboxClose" aria-label="关闭">×</button>
+    <img id="lightboxImage" alt="" />
+    <p id="lightboxCaption"></p>
+  </dialog>
 
   <script src="./js/app.js"></script>
 </body>

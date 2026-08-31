@@ -1,86 +1,40 @@
-# 💗 Baby Countdown
+# Countdown to Us
 
-一个轻量、无依赖的静态倒计时网页，用来展示从 2026 年 8 月 31 日到 12 月 17 日之间的 remote / 见面安排。
+一个自动推进的情侣倒计时静态网页。
 
-## 功能
+## 替换素材
 
-- 自动根据当前日期推进总进度条
-- 自动显示距离 12 月 17 日还剩多少天
-- 自动把「目前在这里」移动到当天所在阶段
-- 已经过的阶段会自动淡化
-- 使用 `America/Indiana/Indianapolis` 时区计算日期
-- 手机和桌面端自适应
-- 无框架、无 npm 依赖，直接打开 `index.html` 即可
+### 宝宝头像
+直接替换：
 
-## 项目结构
+`assets/baby-avatar.svg`
 
-```text
-baby-countdown-repo/
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── app.js
-├── .github/
-│   └── workflows/
-│       └── pages.yml
-├── .gitignore
-├── LICENSE
-└── README.md
-```
+也可以改成 jpg/png，只需要同步修改 `index.html` 与 `css/styles.css` 中的文件名。
 
-## 本地运行
+### 照片墙
+当前占位素材：
 
-最简单的方法：直接双击 `index.html`。
+- `assets/photos/photo-01.svg`
+- `assets/photos/photo-02.svg`
+- ...
+- `assets/photos/photo-06.svg`
 
-也可以启动一个本地静态服务器：
+你可以直接用自己的图片覆盖这些文件，或者在 `js/app.js` 的 `photos` 数组里修改路径和 caption。
+
+## 本地预览
 
 ```bash
 python3 -m http.server 8000
 ```
 
-然后访问：
+打开：
 
-```text
-http://localhost:8000
-```
-
-## 修改日期
-
-所有时间安排都集中在 `js/app.js` 顶部的 `schedule` 数组中。
-
-例如：
-
-```js
-{
-  type: "together",
-  badge: "见面<br>5.5 天",
-  title: "9 月 25 日 — 9 月 30 日",
-  description: "5 天 + 1 晚，好好充电一下 ✨",
-  start: "2026-09-25",
-  end: "2026-09-30",
-}
-```
-
-总进度的起止日期由：
-
-```js
-const START_DATE = "2026-08-31";
-const END_DATE = "2026-12-17";
-```
-
-控制。
+`http://localhost:8000`
 
 ## GitHub Pages
 
-仓库已经包含 GitHub Pages workflow。
+Push 到 `main` 后，在 GitHub：
 
-1. 新建 GitHub repository。
-2. 把本项目全部文件 push 上去。
-3. 在 GitHub 仓库中进入 **Settings → Pages**。
-4. Source 选择 **GitHub Actions**。
-5. push 到 `main` 后，GitHub 会自动部署。
+`Settings → Pages → Source: GitHub Actions`
 
-## License
-
-MIT
+仓库里已经包含静态站点 workflow。
