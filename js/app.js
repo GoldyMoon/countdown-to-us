@@ -13,7 +13,7 @@ const schedule = [
 ];
 
 const photos = Array.from({length:6}, (_,i)=>({
-  src:`./assets/photos/photo-${String(i+1).padStart(2,"0")}.svg`,
+  src:`./assets/photos/photo-${String(i+1).padStart(2,"0")}.jpg`,
   caption:`我们的照片 ${i+1}`
 }));
 

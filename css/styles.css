@@ -71,7 +71,7 @@ h2{margin:4px 0 0;font-size:22px}
 .content{position:relative;padding:2px 0 16px 26px;border-left:2px solid var(--line)}
 .dot{position:absolute;left:-12px;top:-1px;width:22px;height:22px;border-radius:50%;background:white;display:grid;place-items:center}
 .dot::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--pink)}
-.together .dot::after{content:"";width:22px;height:22px;background:url("../assets/baby-avatar.svg") center/cover;border:2px solid white}
+.together .dot::after{content:"";width:22px;height:22px;background:url("../assets/baby-avatar.jpg") center/cover;border:2px solid white}
 .current .content{border-left-color:#ffbad4}
 .current .content::before{
   content:"目前在这里";position:absolute;right:0;top:0;font-size:12px;font-weight:800;
