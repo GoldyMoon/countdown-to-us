@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff7fb" />
+  <meta name="description" content="一个会自动更新进度的见面倒计时页面。" />
+  <title>和宝宝见面的倒计时</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-labelledby="page-title">
+      <span class="sparkle s1" aria-hidden="true">♡</span>
+      <span class="sparkle s2" aria-hidden="true">✦</span>
+
+      <header>
+        <h1 id="page-title">和宝宝见面的倒计时 💗</h1>
+        <p class="subtitle">一段一段熬过去，就到 12 月 17 日啦。</p>
+      </header>
+
+      <section class="overview" aria-label="总进度">
+        <div class="progress-shell" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressShell">
+          <div class="progress" id="progressBar"></div>
+        </div>
+        <div class="progress-label">
+          <span id="progressText">正在计算今天的进度…</span>
+          <span>12 月 17 日 · 学期结束</span>
+        </div>
+      </section>
+
+      <section class="timeline" id="timeline" aria-label="时间安排"></section>
+
+      <section class="finale" id="finale">
+        <strong>🎉 12 月 17 日 · 学期结束</strong>
+        <span>然后就可以和宝宝好好玩啦！</span>
+      </section>
+
+      <footer class="footer">每过一天，都离下一次见面更近一点 ♡</footer>
+    </section>
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
