@@ -76,8 +76,9 @@ function renderPhotos(){
 function setupPhotoWall(){
   const vp=document.getElementById("photoViewport"), track=document.getElementById("photoTrack");
   const toggle=document.getElementById("wallToggle");
-  let paused=matchMedia("(prefers-reduced-motion: reduce)").matches, last=0;
-  if(paused) toggle.textContent="播放";
+  let paused = false;
+  let last = 0;
+
 
   function loop(t){
     if(!last) last=t;
