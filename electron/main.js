@@ -10,9 +10,9 @@ function createPetWindow() {
 
   petWindow = new BrowserWindow({
     width: 250,
-    height: 270,
+    height: 370,
     x: Math.max(20, width - 290),
-    y: Math.max(20, height - 330),
+    y: Math.max(20, height - 430),
     transparent: true,
     frame: false,
     resizable: false,

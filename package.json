@@ -1,6 +1,6 @@
 {
   "name": "countdown-to-us",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Countdown website with an optional Electron desktop pet.",
   "main": "electron/main.js",
   "scripts": {
@@ -29,11 +29,17 @@
     "mac": {
       "category": "public.app-category.lifestyle",
       "icon": "assets/icon.png",
-      "target": ["dmg", "zip"]
+      "target": [
+        "dmg",
+        "zip"
+      ]
     },
     "win": {
       "icon": "assets/icon.png",
-      "target": ["nsis", "zip"]
+      "target": [
+        "nsis",
+        "zip"
+      ]
     }
   }
 }

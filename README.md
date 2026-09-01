@@ -10,7 +10,8 @@ countdown-to-us/
 ├── css/styles.css
 ├── js/app.js                  # 11 张照片 + 当前滚动逻辑
 ├── assets/
-│   ├── baby-avatar.jpg        # placeholder，替换它即可同时更新网页/桌宠
+│   ├── baby-avatar.jpg        # 网页中的宝宝头像 / 进度条头像
+│   ├── pet-avatar.jpg         # 桌宠本体形象
 │   ├── icon.png
 │   └── photos/
 │       ├── photo-01.jpg
@@ -74,6 +75,7 @@ npm run dist:mac
 
 ```text
 assets/baby-avatar.jpg
+assets/pet-avatar.jpg
 ```
 
 11 张照片：直接覆盖：
@@ -98,3 +100,17 @@ assets/photos/photo-11.jpg
 - 鼠标移出继续
 - 左右按钮
 - 点击放大
+
+## 图标和桌宠头像
+
+- `assets/baby-avatar.jpg`：真正显示在桌面上的桌宠头像，也用于网页里的宝宝头像。
+- `assets/icon.png`：Electron 打包后的 App / Finder / DMG 图标，不是桌宠本体。
+
+桌宠窗口已加高，倒计时气泡与进度条固定在头像上方，并留出更大的垂直间距。
+
+
+### 现在三者已经分开
+
+- **网页宝宝头像**：`assets/baby-avatar.jpg`
+- **桌宠本体形象**：`assets/pet-avatar.jpg`
+- **App 图标**：`assets/icon.png`

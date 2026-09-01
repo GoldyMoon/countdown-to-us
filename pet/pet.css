@@ -16,7 +16,8 @@ button{font:inherit}
 .pet-button.sleepy .sleep-z{opacity:1;animation:zzz 2s ease-in-out infinite}
 .pet-button.bump img{animation:bump .48s ease}
 .bubble{
-  position:absolute;left:8px;right:8px;top:4px;padding:14px;border-radius:19px;background:rgba(255,255,255,.94);
+  /* Keep the countdown card clearly above the pet avatar. */
+  position:absolute;left:8px;right:8px;top:auto;bottom:190px;padding:14px;border-radius:19px;background:rgba(255,255,255,.94);
   border:1px solid rgba(234,223,240,.95);box-shadow:0 16px 34px rgba(72,54,77,.16);backdrop-filter:blur(16px);
   transform-origin:bottom center;animation:pop .18s ease-out
 }
