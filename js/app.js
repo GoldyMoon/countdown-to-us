@@ -84,7 +84,7 @@ function setupPhotoWall(){
     if(!last) last=t;
     const dt=Math.min(32,t-last); last=t;
     if(!paused){
-      vp.scrollLeft+=24*dt/1000;
+      vp.scrollLeft+=80*dt/1000;
       const half=track.scrollWidth/2;
       if(vp.scrollLeft>=half) vp.scrollLeft-=half;
     }
