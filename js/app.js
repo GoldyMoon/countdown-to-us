@@ -12,7 +12,7 @@ const schedule = [
   {type:"remote",badge:"REMOTE<br>≤17 天",title:"最后一段 remote",description:"11 月 30 日 — 12 月 16 日，最后冲刺！",start:"2026-11-30",end:"2026-12-16"}
 ];
 
-const photos = Array.from({length:11}, (_,i)=>({
+const photos = Array.from({length:14}, (_,i)=>({
   src:`./assets/photos/photo-${String(i+1).padStart(2,"0")}.jpg`,
   caption:`我们的照片 ${i+1}`
 }));
