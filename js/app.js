@@ -79,7 +79,6 @@ function setupPhotoWall(){
   let paused = false;
   let last = 0;
 
-
   function loop(t){
     if(!last) last=t;
     const dt=Math.min(32,t-last); last=t;

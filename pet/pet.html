@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Countdown Pet</title>
+  <link rel="stylesheet" href="./pet.css">
+</head>
+<body>
+  <main id="petRoot" class="pet-root">
+    <section id="bubble" class="bubble hidden" aria-live="polite">
+      <div class="bubble-top">
+        <div>
+          <span class="eyebrow">NEXT MEET</span>
+          <strong id="bubbleMain">正在计算…</strong>
+          <small id="bubbleSub"></small>
+        </div>
+        <button id="closeBubble" class="tiny-btn" type="button" aria-label="收起">×</button>
+      </div>
+
+      <div class="mini-progress">
+        <div id="miniProgressBar"></div>
+      </div>
+
+      <div class="bubble-actions">
+        <button id="openDashboard" type="button">打开我们的空间</button>
+        <button id="quitApp" type="button" class="secondary">退出</button>
+      </div>
+    </section>
+
+    <button id="petButton" class="pet-button" type="button" aria-label="宝宝桌宠">
+      <span class="halo"></span>
+      <img src="../assets/baby-avatar.jpg" alt="宝宝头像">
+      <span id="statusBadge" class="status-badge">♡</span>
+      <span id="sleepZ" class="sleep-z" aria-hidden="true">Zzz</span>
+    </button>
+
+    <div id="hearts" class="hearts" aria-hidden="true"></div>
+    <div class="drag-hint">拖动宝宝 · 单击互动 · 双击展开</div>
+  </main>
+
+  <script src="./pet.js"></script>
+</body>
+</html>

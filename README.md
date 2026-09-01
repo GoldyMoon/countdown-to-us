@@ -1,40 +1,100 @@
-# Countdown to Us
+# Countdown to Us + Desktop Pet
 
-一个自动推进的情侣倒计时静态网页。
+这一版是在现有网页 repo 上**直接附加桌宠功能**，不是把原网页换成另一套代码。
 
-## 替换素材
+## 结构
 
-### 宝宝头像
-直接替换：
-
-`assets/baby-avatar.svg`
-
-也可以改成 jpg/png，只需要同步修改 `index.html` 与 `css/styles.css` 中的文件名。
-
-### 照片墙
-当前占位素材：
-
-- `assets/photos/photo-01.svg`
-- `assets/photos/photo-02.svg`
-- ...
-- `assets/photos/photo-06.svg`
-
-你可以直接用自己的图片覆盖这些文件，或者在 `js/app.js` 的 `photos` 数组里修改路径和 caption。
-
-## 本地预览
-
-```bash
-python3 -m http.server 8000
+```text
+countdown-to-us/
+├── index.html                 # 现有网页，GitHub Pages 继续用它
+├── css/styles.css
+├── js/app.js                  # 11 张照片 + 当前滚动逻辑
+├── assets/
+│   ├── baby-avatar.jpg        # placeholder，替换它即可同时更新网页/桌宠
+│   ├── icon.png
+│   └── photos/
+│       ├── photo-01.jpg
+│       ├── ...
+│       └── photo-11.jpg       # 全部为 placeholder
+├── electron/
+│   ├── main.js
+│   └── preload.js
+├── pet/
+│   ├── pet.html
+│   ├── pet.css
+│   └── pet.js
+├── package.json
+└── .github/workflows/static.yml
 ```
 
-打开：
+## 网页部署
 
-`http://localhost:8000`
+和之前完全一样：
 
-## GitHub Pages
+```bash
+git add .
+git commit -m "Add desktop pet"
+git push
+```
 
-Push 到 `main` 后，在 GitHub：
+GitHub Pages 仍然部署根目录的 `index.html`。
 
-`Settings → Pages → Source: GitHub Actions`
+## 运行桌宠
 
-仓库里已经包含静态站点 workflow。
+先安装 Node.js，然后在 repo 根目录：
+
+```bash
+npm install
+npm start
+```
+
+桌宠功能：
+
+- 透明悬浮窗口
+- Always on top
+- 可拖动
+- 单击宝宝：弹出倒计时 + 冒爱心
+- 双击宝宝：打开**同一个根目录网页 Dashboard**
+- 晚上自动显示 `Zzz`
+- 自动显示下次见面还有几天
+- 见面期间自动显示“现在就在一起”
+- 12 月 17 日自动切换庆祝状态
+
+## 打包 Mac App
+
+```bash
+npm run dist:mac
+```
+
+输出在 `dist/`。
+
+## 替换真实素材
+
+头像：直接覆盖：
+
+```text
+assets/baby-avatar.jpg
+```
+
+11 张照片：直接覆盖：
+
+```text
+assets/photos/photo-01.jpg
+...
+assets/photos/photo-11.jpg
+```
+
+只要文件名不变，不需要改任何代码。
+
+## 当前照片墙代码
+
+保留了你现在这版逻辑：
+
+- `length: 11`
+- JPG
+- 自动循环滚动
+- `80 px/s`
+- 鼠标移入暂停
+- 鼠标移出继续
+- 左右按钮
+- 点击放大
