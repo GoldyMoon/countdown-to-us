@@ -3,11 +3,13 @@ const START_DATE = "2026-08-31";
 const END_DATE = "2026-12-17";
 
 const schedule = [
-  {type:"remote",badge:"REMOTE<br>27 天",title:"第一段 remote",description:"现在 → 9 月 25 日",start:"2026-08-31",end:"2026-09-24"},
+  {type:"remote",badge:"REMOTE<br>27 天",title:"第一段 remote",description:"现在 → 9 月 11 日",start:"2026-08-31",end:"2026-09-10"},
+  {type:"together",badge:"见面<br>4 天",title:"9 月 11 日 — 9 月 14 日",description:"4 天，Chicago冲冲冲",start:"2026-09-11",end:"2026-09-14"},
+  {type:"remote",badge:"REMOTE<br>27 天",title:"第二段 remote",description:"9 月 15 日 → 9 月 25 日",start:"2026-09-15",end:"2026-09-24"},
   {type:"together",badge:"见面<br>5.5 天",title:"9 月 25 日 — 9 月 30 日",description:"5 天 + 1 晚，好好充电一下",start:"2026-09-25",end:"2026-09-30"},
-  {type:"remote",badge:"REMOTE<br>15 天",title:"第二段 remote",description:"10 月 1 日 — 10 月 15 日",start:"2026-10-01",end:"2026-10-15"},
+  {type:"remote",badge:"REMOTE<br>15 天",title:"第三段 remote",description:"10 月 1 日 — 10 月 15 日",start:"2026-10-01",end:"2026-10-15"},
   {type:"together",badge:"见面<br>12.5 天",title:"10 月 16 日 — 10 月 28 日",description:"12 天 + 1 晚，这次可以待很久",start:"2026-10-16",end:"2026-10-28"},
-  {type:"remote",badge:"REMOTE<br>22 天",title:"第三段 remote",description:"10 月 29 日 — 11 月 19 日",start:"2026-10-29",end:"2026-11-19"},
+  {type:"remote",badge:"REMOTE<br>22 天",title:"第四段 remote",description:"10 月 29 日 — 11 月 19 日",start:"2026-10-29",end:"2026-11-19"},
   {type:"together",badge:"见面<br>10.5 天",title:"11 月 20 日 — 11 月 29 日",description:"10 天 + 1 晚，离学期结束已经很近啦",start:"2026-11-20",end:"2026-11-29"},
   {type:"remote",badge:"REMOTE<br>≤17 天",title:"最后一段 remote",description:"11 月 30 日 — 12 月 16 日，最后冲刺！",start:"2026-11-30",end:"2026-12-16"}
 ];
